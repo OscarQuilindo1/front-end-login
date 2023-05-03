@@ -1,0 +1,98 @@
+<app-navbar></app-navbar>
+<body class="text-center">
+  <main class="form-signin w-100 text-center shadow-lg p-3">
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name"
+        [(ngModel)]="nombre"
+      />
+      <label for="floatingInput">name</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="species"
+        [(ngModel)]="especie"
+      />
+      <label for="floatingInput">species</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="race"
+        [(ngModel)]="raza"
+      />
+      <label for="floatingInput">race</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="birthdate"
+        [(ngModel)]="fecha_nacimiento"
+      />
+      <label for="floatingInput">birthdate</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="file"
+        class="form-control-file"
+        id="floatingPassword"
+        name="image"
+        accept="image/*"
+        [(ngModel)]="foto"
+      />
+      <br />
+    </div>
+    <br />
+    <button
+      class="w-100 btn btn-lg btn-primary"
+      type="button"
+      (click)="upLoad()"
+    >
+      Upload
+    </button>
+    <br />
+  </main>
+</body>
+
+<div class="row mt-1">
+  <div class="col-lg-4 offset-lg-4">
+    <div class="card mb-3" style="max-width: 640px">
+      <div class="row g-0">
+        <div *ngFor="let item of listPets" class="col-md-4">
+          <img [src]="imgUrl" class="img-fluid rounded-start" alt="..." />
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-text">
+                <small class="badge bg-primary text-wrap">Name:</small>
+                {{ item.nombre }}
+              </p>
+              <p class="card-text">
+                <small class="badge bg-primary text-wrap"> Species:</small>
+                {{ item.especie }}
+              </p>
+              <p class="card-text">
+                <small class="badge bg-primary text-wrap">Race:</small>
+                {{ item.raza }}
+              </p>
+              <p class="card-text">
+                <small class="badge bg-primary text-wrap"> Birthdate:</small>
+                {{ item.fecha_nacimiento }}
+              </p>
+              <!-- <p class="card-text">{{ item.foto }}</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
